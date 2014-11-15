@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="transactions">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +9,10 @@
     
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
+    <script src="core.js"></script>
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -16,7 +20,7 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body ng-controller="mainController">
     <div class="container">
       <nav class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
@@ -31,8 +35,9 @@
       </nav>
       <div class="row">
         <div class="col-sm-4">
-          <div class="list-group">
-            <div class="pannel panel-primary">EC-24235DF4535T5656</div>
+          <div class="list-group" ng-repeat="transaction in melody.records">
+            <div class="pannel panel-primary">{{transaction.token.text}}</div>
+            <div class="pannel panel-primary">{{transaction.transaction.token}}</div>
             <div class="pannel panel-default">EC-24235DF4535T5656</div>
           </div>
         </div>
