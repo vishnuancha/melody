@@ -36,8 +36,14 @@
       <div class="row">
         <div class="col-sm-4">
           <div class="list-group" ng-repeat="transaction in melody.records">
-            <div class="pannel panel-primary">{{transaction.token.text}}</div>
-            <div class="pannel panel-primary">{{transaction.transaction.token}}</div>
+            <div class="pannel panel-primary">{{transaction.transaction.token}}
+             <div class="list-group" ng-repeat="apicall in transaction.transaction.apicalls">
+                <div class="pannel panel-primary">{{apicall.endpoint}}  ----    {{apicall.correlation_id}}
+                </div>
+              </div>
+
+            </div>
+
             <div class="pannel panel-default">EC-24235DF4535T5656</div>
           </div>
         </div>
